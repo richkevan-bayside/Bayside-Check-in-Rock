@@ -1,0 +1,104 @@
+
+// Load Master Styles
+// -------------------------
+@import "../../../Styles/Bootstrap/variables.less";
+@import "../../../Styles/_rock-core.less";
+@import "../../../Styles/_store.less";
+@import "../../../Styles/_rock-variables.less";
+@import "_variables.less";
+@import "_variable-overrides.less";
+@import "_print.less";
+@import "./components/_navbar.less";
+@import "./components/_hero.less";
+@import "./components/_panels.less";
+@import "./components/_transaction-entry.less";
+@import "./components/_public-profile.less";
+
+/*
+    Rock Theme Styles
+
+    1. HTML Overrides
+    2. Bootstrap Overrides
+    3. Theme Styling
+    4. Responsive Overrides
+
+*/
+
+// 1. HTML Overrides
+// -------------------------
+
+html,
+body {
+  height: 100%;
+}
+
+main {
+  display: block;
+}
+
+#form1 {
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -ms-flex-direction: column !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar-default {
+  background: none;
+  border: none;
+}
+
+.main {
+  flex-shrink: 0 !important;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  -ms-flex-negative: 0 !important;
+}
+
+.page-footer {
+  margin-top: auto; // Stick Footer to Bottom when content is short
+  border-top: 1px solid @footer-default-border;
+
+  > .container {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
+
+.card:hover {
+  text-decoration: none;
+
+  .text-muted {
+    color: @text-muted;
+  }
+}
+
+// 2. Bootstrap Overrides
+// -------------------------
+
+.well {
+  box-shadow: none;
+}
+
+.breadcrumb {
+  padding-right: 0;
+  padding-left: 0;
+  margin: 0;
+  font-size: @font-size-small;
+
+  a {
+    color: @breadcrumb-color;
+  }
+
+  > li + li::before {
+    padding: 0 3px 0 5px;
+    color: @breadcrumb-color;
+  }
+}
+
+@import "_css-overrides.less";
