@@ -1,0 +1,23 @@
+.enable-hero-mixin(true) {
+  .hero {
+    padding: 60px 0;
+    color: @hero-color;
+    text-align: center;
+    background: @hero-background;
+
+    h1 {
+      margin: 0;
+      font-size: @hero-font-size-h1;
+    }
+
+    @media (min-width: @screen-md-min) {
+      text-align: left;
+    }
+  }
+}
+.enable-hero-mixin(false) {
+  .hero {
+    display: none;
+  }
+}
+.enable-hero-mixin(@enable-hero);

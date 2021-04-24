@@ -24,6 +24,7 @@
     <title></title>
 
     <script src="<%# System.Web.Optimization.Scripts.Url("~/Scripts/Bundles/RockJQueryLatest" ) %>"></script>
+    <script src="<%#System.Web.Optimization.Scripts.Url("~~/Scripts/index.js" )  %>"></script>
 
     <!-- Set the viewport width to device width for mobile -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -33,6 +34,9 @@
 	<!-- Included CSS Files -->
     <link rel="stylesheet" href="<%# ResolveRockUrl("~~/Styles/bootstrap.css", true) %>"/>
 	<link rel="stylesheet" href="<%# ResolveRockUrl("~~/Styles/theme.css", true) %>"/>
+
+    <!-- Include Bilo font -->
+    <link rel="stylesheet" href="https://use.typekit.net/xvj3qwq.css">
 
     <script src="<%# ResolveRockUrl("~/Scripts/modernizr.js" ) %>" ></script>
 

@@ -1,0 +1,134 @@
+//
+// forms.less
+// Extended from Bootstrap
+//
+
+.form-row {
+  .row();
+}
+
+// Form Group Elements found on Public Profile Edit
+.form-horizontal > .form-group {
+  .row();
+}
+
+
+//
+// Bootstrap Overrides ===================================
+//
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+.note-editor.note-frame {
+  margin: 0;
+  border: 1px solid @input-border !important;
+  .box-shadow(none);
+  &:focus-within {
+    box-shadow: @input-focus-box-shadow;
+  }
+}
+
+.note-editor .note-toolbar {
+  padding: 0;
+  border-bottom: 1px solid @input-border;
+}
+
+.note-btn {
+  padding: 5px 10px 7px;
+  background: #fff;
+  border: 0;
+
+  &:hover,
+  &:focus {
+    background: #fff;
+  }
+
+  &:active,
+  &:active:focus,
+  &.active,
+  &.active:focus,
+  &.active:hover {
+    background: #cbeefa;
+  }
+}
+
+.control-label {
+  font-weight: 400;
+}
+
+.picker-label,
+.form-control {
+  box-shadow: none;
+  transition: @input-focus-transition;
+
+  .active,
+  &:focus {
+    border: 1px solid @input-border-focus;
+    box-shadow: @input-focus-box-shadow;
+  }
+}
+
+.url-link-box,
+.phone-number-box,
+.email-box,
+.currency-box {
+  .control-wrapper {
+    width: 100%;
+  }
+
+  .input-group,
+  &.input-group {
+    position: relative;
+    display: block;
+    .clearfix();
+
+    .input-group-addon {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      z-index: 1;
+      z-index: 4;
+      width: 40px;
+      pointer-events: none;
+      background-color: transparent;
+      border: 0;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+    .form-control {
+      padding-left: 40px;
+      border-radius: @input-border-radius;
+    }
+  }
+}
+
+.year-picker .input-group,
+.input-group.bootstrap-timepicker,
+.input-group.date {
+  position: relative;
+  display: block;
+  .clearfix();
+
+  .input-group-addon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 1;
+    z-index: 4;
+    width: 40px;
+    pointer-events: none;
+    background-color: transparent;
+    border: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .form-control {
+    padding-right: 40px;
+    border-radius: @input-border-radius;
+  }
+}

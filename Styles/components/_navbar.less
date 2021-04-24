@@ -1,0 +1,156 @@
+.navbar-brand {
+  height: auto;
+
+  img {
+    display: inline;
+    max-width: 100%;
+    max-height: @logo-max-height-mobile;
+    padding: @logo-padding-mobile 0;
+
+    @media (min-width: @grid-float-breakpoint) {
+      max-height: @logo-max-height-desktop;
+      padding: @logo-padding-desktop 0;
+    }
+  }
+}
+
+@media (max-width: @grid-float-breakpoint-max) {
+  .loginstatus > li {
+    min-width: inherit;
+  }
+
+  .loginstatus > li > a span {
+    display: none;
+  }
+
+  .loginstatus > li > a .profile-photo {
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+  }
+
+  .loginstatus > li .dropdown-menu {
+    right: 0;
+    left: auto;
+  }
+
+}
+
+.login-mixin() {
+  .loginstatus {
+
+    @media (max-width: @grid-float-breakpoint-max) {
+      .open .dropdown-menu {
+        position: absolute;
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+.logo-alignment-mixin(left) {
+  // Center the Navbar Container
+  .navbar > .container {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .navbar-nav {
+    margin-right: 0;
+    margin-left: auto;
+  }
+
+  .login-mixin();
+}
+
+.logo-alignment-mixin(center) {
+  // Center the Navbar Container
+  .navbar > .container {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: end !important;
+    align-items: center;
+    justify-content: flex-end !important;
+    height: (@logo-max-height-mobile);
+
+    @media (min-width: @grid-float-breakpoint) {
+      height: (@logo-max-height-desktop);
+    }
+  }
+
+  .navbar-nav {
+    margin: 0;
+  }
+
+  .dropdown > .navbar-link {
+    padding-right: 0;
+  }
+
+
+  .login-mixin();
+
+  .navbar-brand {
+    position: absolute;             /* new */
+    // flex: 0 1 auto;
+    top: 0;
+    left: 50%;
+    width: @logo-max-width-desktop;
+    padding: 0;
+    text-align: center;
+    transform: translateX(-50%);
+  }
+
+  .navbar-brand {
+    float: none;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
+.logo-alignment-mixin(right) {
+  .navbar > .container {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    -ms-flex-direction: row-reverse !important;
+    flex-direction: row-reverse !important;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .navbar-nav {
+    margin-right: auto;
+  }
+
+  @media (min-width: @grid-float-breakpoint) {
+    .navbar-header {
+      float: right;
+    }
+
+    // Move Login to Left
+    .navbar-default .navbar-collapse {
+      position: absolute;
+      left: 0;
+    }
+  }
+
+  .login-mixin();
+}
+
+
+.logo-alignment-mixin(@logo-alignment);
