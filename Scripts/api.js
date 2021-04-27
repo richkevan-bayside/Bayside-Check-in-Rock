@@ -1,8 +1,4 @@
 
-$(document).ready(function() {
-    alert('I am an API!');
-});
-
 const ROCK_API_BASE_URL = 'https://rock.bayside.church/api';
     
 function updateAttributeValue(attributeValueId, newValue) {
