@@ -1,8 +1,19 @@
 
-function onWorkflowRequestComplete(data) {
+import { generateInput } from './forms';
+import { rockApiRequest } from './api';
+
+function getWorkflow(id, sucess) {
+    const endpoint = `Workflows/${id}?loadAttributes=expanded`;
+
+    rockApiRequest({}, endpoint, 'GET', {
+        sucess
+    });
+}
+
+function geterateFormForWorkflow(data, element) {
     setLoadingState(false);
     
-    const parent = $('.bcc-form');
+    const parent = element;
     const attributeKeys = Object.keys(data.AttributeValues);
     
     // create a field for each attrib
@@ -53,7 +64,6 @@ function onWorkflowRequestComplete(data) {
                 value.text(input.val());
                 
                 // request
-
                 
                 input.remove();
                 cancelButton.remove();
@@ -71,4 +81,9 @@ function onWorkflowRequestComplete(data) {
 
         actions.append(editButton);
     });
+}
+
+export default {
+    getWorkflow,
+    geterateFormForWorkflow
 }

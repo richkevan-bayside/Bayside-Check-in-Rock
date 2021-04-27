@@ -1,16 +1,24 @@
 
 const webpack = require('webpack');
-const  UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
     context: __dirname,
     entry: './Scripts/index.js',
     output: {
         path: __dirname + '/Assets/Scripts',
-        filename: 'index.min.js'
+        filename: 'index.min.js',
+        library: 'bcc'
     },
-    optimization: {
-        minimizer: [new UglifyJsPlugin()],
+    module: {
+        rules: [
+            {
+                test: /\.(js)$/,
+                exclude: /[\\/]node_modules[\\/]/,
+                use: {
+                    loader: 'babel-loader',       
+                }
+            }
+        ]
     },
-    mode: 'development'
+    mode: 'production'
 }

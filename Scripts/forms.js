@@ -5,7 +5,7 @@ const FIELD_TYPES = {
     MEMO: 21
 };
 
-function generateInput(attribute, attributeValue) {
+export function generateInput(attribute, attributeValue) {
     const valueFormatted = attributeValue ? attributeValue.ValueFormatted : null;
     const value = attributeValue ? attributeValue.Value : null;
     const type = attribute.FieldTypeId;

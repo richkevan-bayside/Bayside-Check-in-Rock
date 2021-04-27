@@ -1,47 +1,50 @@
 
-const ROCK_API_BASE_URL = 'https://rock.bayside.church/api';
-    
-function updateAttributeValue(attributeValueId, newValue) {
-    const url = `https://rock.bayside.church/api/AttributeValues/${attributeValueId}`;
+const ROCK_API_BASE_URL = 'http://bcceric.baysideonline.com/api';
 
-    const request = new Request(url, {
-        method: 'PATCH',
+/**
+* preforms a request against the rock API
+* @param {object} body - the request body
+* @param {string} endpoint - the reletave path of the endpoint
+* @param {string} method - HTTP verb
+* @param {object} options - options for requests, see below
+*  - displayErrorBanners: boolean
+*  - displaySucessBanners: boolean
+*  - sucess: function
+*  - failure: function
+*/
+export function rockApiRequest(body, endpoint, method, options) {
+    const request = new Request({
+        method: method,
         headers: new Headers({
             'Content-Type': 'application/json'
         }),
-        body: JSON.stringify({ Value: newValue })
+        body: JSON.stringify(body)
     });
 
-    fetch(request)
-    .then(() => {
-        
+    const url = `${ROCK_API_BASE_URL}/${endpoint}`;
+    let returnData = null;
+
+    fetch(url, request)
+    .then((response) => {
+        // check status codes
+        if (response.ok) {
+            return response.json();
+        } else {
+            if (options && options.failure) {
+                options.failure(response);
+            }
+        }
     })
-    .catch(() => {
-        
-    });
-}
-
-function insertNewAttributeValue(attributeId, entityId, value) {
-    const url = `https://rock.bayside.church/api/AttributeValues`;
-
-    const request = new Request(url, {
-        method: 'POST',
-        headers: new Headers({
-            'Content-Type': 'application/json'
-        }),
-        body: JSON.stringify({
-            IsSystem: false,
-            EntityId: entityId,
-            AttributeId: attributeId,
-            Value: value
-        })
-    });
-
-    fetch(request)
-    .then(() => {
-        
+    .then((json) => {
+        if (options && options.sucess) {
+            options.sucess(json);
+        }
     })
-    .catch((response) => {
-        
+    .catch((error) => {
+        if (options && options.failure) {
+            options.failure(error);
+        }
     });
+
+    return returnData;
 }

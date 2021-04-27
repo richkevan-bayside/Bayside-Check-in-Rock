@@ -1,6 +1,5 @@
 
-import './api';
-import './components/date-picker';
+import workflows from './workflows';
 
 function setLoadingState(loading) {
     if (loading) {
@@ -15,3 +14,9 @@ function createElementAndSetValue(html, value) {
     elem.val(value);
     return elem;
 }
+
+export function foo() {
+    alert('foo');
+}
+
+export const workflow = workflows;
