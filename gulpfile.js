@@ -36,7 +36,8 @@ function watch() {
     gulp.watch('./Scripts/**/*.js', complieJs);
 }
 
-const build = gulp.series([compileLess, complieJs]);
+// we don't want to compile less because of dependencies on main rock style sheets, this wil be done on Rock itself
+const build = gulp.series([complieJs]);
 
 module.exports = {
     watch: watch,
