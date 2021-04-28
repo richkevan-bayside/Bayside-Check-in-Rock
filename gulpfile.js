@@ -36,6 +36,9 @@ function watch() {
     gulp.watch('./Scripts/**/*.js', complieJs);
 }
 
+const build = gulp.series([compileLess, complieJs]);
+
 module.exports = {
-    watch: watch
+    watch: watch,
+    build: build
 }
