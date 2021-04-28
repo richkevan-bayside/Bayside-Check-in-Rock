@@ -1,11 +1,11 @@
 
 import { generateInput } from './forms';
-import { rockApiRequest } from './api';
+import { rockRequest } from './api';
 
 function getWorkflow(id, sucess) {
     const endpoint = `Workflows/${id}?loadAttributes=expanded`;
 
-    rockApiRequest({}, endpoint, 'GET', {
+    rockRequest({}, endpoint, 'GET', {
         sucess
     });
 }
