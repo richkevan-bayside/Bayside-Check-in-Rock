@@ -1,18 +1,7 @@
 
 const ROCK_API_BASE_URL = 'http://bcceric.baysideonline.com/api';
 
-/**
-* preforms a request against the rock API
-* @param {object} body - the request body
-* @param {string} endpoint - the reletave path of the endpoint
-* @param {string} method - HTTP verb
-* @param {object} options - options for requests, see below
-*  - displayErrorBanners: boolean
-*  - displaySucessBanners: boolean
-*  - sucess: function
-*  - failure: function
-*/
-export function rockApiRequest(body, endpoint, method, options) {
+export function rockRequest(body, endpoint, method, options) {
     const request = new Request({
         method: method,
         headers: new Headers({

@@ -44,6 +44,11 @@
 </head>
 <body runat="server" id="body">
 
+    <!-- Banner Section -->
+    <div id="banner-container">
+        
+    </div>
+
     <form id="form1" runat="server">
 
         <!-- Page Header -->

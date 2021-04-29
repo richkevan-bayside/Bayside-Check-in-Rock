@@ -1,5 +1,6 @@
 
 import workflows from './workflows';
+import * as banners from './components/banner'
 
 function setLoadingState(loading) {
     if (loading) {
@@ -20,3 +21,6 @@ export function foo() {
 }
 
 export const workflow = workflows;
+export const component = {
+    banner: banners
+};
