@@ -1,6 +1,7 @@
 
 import workflows from './workflows';
-import * as banners from './components/banner'
+import banner from './components/banner'
+import datePicker from './components/date-picker';
 
 function setLoadingState(loading) {
     if (loading) {
@@ -22,5 +23,6 @@ export function foo() {
 
 export const workflow = workflows;
 export const component = {
-    banner: banners
+    Banner: banner,
+    DatePicker: datePicker
 };

@@ -2,7 +2,7 @@
 /*
  * the date picker element
  */
-class DatePicker {
+export default class DatePicker {
     constructor(initialValue) {
         if (!initialValue) {
             initialValue = new Date();
@@ -106,7 +106,7 @@ class DatePicker {
     }
 
     setValueToCurrentSelected() {
-        this.root.val(this.state.current.Date('yyyy-mm-dd'));
+        this.root.val(this.state.current.format('yyyy-mm-dd'));
     }
 
     renderValue() {

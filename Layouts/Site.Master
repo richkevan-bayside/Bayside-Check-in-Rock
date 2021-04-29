@@ -45,7 +45,7 @@
 <body runat="server" id="body">
 
     <!-- Banner Section -->
-    <div id="banner-container">
+    <div id="bcc-banner-container">
         
     </div>
 

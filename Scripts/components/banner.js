@@ -1,9 +1,7 @@
 
-export function addBanner(text, cssClass) {
-    const container = $('#banner-container');
-
-    if (container) {
-        const newBanner = $(`
+export default class Banner {
+    constructor(text, cssClass) {
+        this.root = $(`
             <div class="bcc-banner alert ${cssClass} alert-dismissable">
                 ${text}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -12,22 +10,20 @@ export function addBanner(text, cssClass) {
             </div>`
         );
 
-        const removeBannerTimeout = () => {
-            newBanner.remove();
+        this.root.hide();
+    }
+
+    addToContainer(containerId) {
+        const container = $(`#${containerId}`);
+
+        if (container) {
+            container.append(this.root);
+            this.root.fadeIn(100);
+
+            // remove banner after 5s
+            setTimeout(() => {
+                this.root.remove();
+            }, 5000);
         }
-
-        // add click listener to close button
-        newBanner.find('.btn-close').click(function () {
-            newBanner.remove();
-        });
-
-        newBanner.hide();
-        container.append(newBanner);
-        newBanner.fadeIn(100);
-
-        // remove banner after 5s
-        setTimeout(() => {
-            newBanner.remove();
-        }, 5000);
     }
 }
