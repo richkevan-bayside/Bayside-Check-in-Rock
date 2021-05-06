@@ -2,6 +2,7 @@
 import workflows from './workflows';
 import banner from './components/banner'
 import datePicker from './components/date-picker';
+import bccDropdown from './components/bccDropdown';
 
 function setLoadingState(loading) {
     if (loading) {
@@ -17,11 +18,11 @@ function createElementAndSetValue(html, value) {
     return elem;
 }
 
-export function foo() {
-    alert('foo');
+export function init() {
+    // init all components
+    bccDropdown.init();
 }
 
-export const workflow = workflows;
 export const component = {
     Banner: banner,
     DatePicker: datePicker
