@@ -22,8 +22,3 @@ export function init() {
     // init all components
     bccDropdown.init();
 }
-
-export const component = {
-    Banner: banner,
-    DatePicker: datePicker
-};
