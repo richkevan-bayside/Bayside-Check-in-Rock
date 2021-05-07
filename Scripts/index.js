@@ -1,7 +1,4 @@
 
-import workflows from './workflows';
-import banner from './components/banner'
-import datePicker from './components/date-picker';
 import bccDropdown from './components/bccDropdown';
 
 function setLoadingState(loading) {
