@@ -245,6 +245,17 @@ main {
   }
 }
 
+.nav {
+  & li.active > a {
+    background: @brand-color;
+    color: white;
+  }
+
+  & li > a {
+    color: @text-color;
+  }
+}
+
 .image {
   border-radius: 10px;
   box-shadow: 5px 0 20px rgba(0, 0, 0, .2);
