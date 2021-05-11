@@ -109,6 +109,142 @@ main {
   }
 }
 
+.picker-label,
+.form-control {
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  border: none;
+
+
+  .active,
+  &:focus {
+    border: 1px solid @brand-color;
+    box-shadow: 0 0 10px lighten(@brand-color, 20%) !important;
+  }
+}
+
+.pagination {
+  & li.active a {
+    color: white;
+  }
+
+  & li a {
+    color: @text-color;
+  }
+}
+
+.btn-action {
+  color: white;
+  background: @btn-primary-bg;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 0 5px rgba(0,0,0,.1);
+
+  &:hover {
+    background: lighten(@btn-primary-bg, 10%);
+    border: none;
+    color: white;
+  }
+}
+
+.list-items {
+  & .input-group .form-control {
+    border-radius: 0 10px 10px 0 !important;
+  }
+
+  .input-group-addon {
+    background: @btn-primary-bg;
+    border: none;
+    color: white;
+    border-radius: 10px 0 0 10px;
+
+    & i {
+      color: white;
+    }
+
+    .minimal:hover {
+      color: lighten(@btn-primary-bg, 30%);
+    }
+  }
+}
+
+.picker {
+  & .picker-menu,
+  & .picker-actions {
+    background-color: white;
+  }
+}
+
+.js-button-dropdownlist {
+  & .dropdown-menu {
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+  }
+}
+
+.btn-group {
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,.2);
+
+  & * {
+    border: none;
+  }
+}
+
+.numberincrement {
+  & > * {
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+  }
+
+  & .numberincrement-down {
+    background-color: @btn-primary-bg;
+    border-radius: 10px 0 0 10px;
+    border: none;
+    color: white;
+  }
+
+  & .numberincrement-value {
+    border: none;
+  }
+
+  & .numberincrement-up {
+    background-color: @btn-primary-bg;
+    border-radius: 0 10px 10px 0;
+    border: none;
+    color: white;
+  }
+}
+
+// 3. Theme Styling
+// -------------------------
+
+.loginstatus {
+  & .dropdown-toggle {
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+
+    &:hover {
+      background: none;
+    }
+  }
+
+  & .dropdown-menu {
+    border-radius: 10px;
+
+    & li a {
+      transition: all .15s;
+
+      &:hover {
+        background: none;
+        transform: scale(1.05);
+        font-weight: bold;
+      }
+    }
+  }
+}
+
 .image {
   border-radius: 10px;
   box-shadow: 5px 0 20px rgba(0, 0, 0, .2);

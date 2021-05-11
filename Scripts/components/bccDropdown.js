@@ -1,4 +1,3 @@
-import { rockRequest } from "../api";
 
 function init() {
     $('.bcc-dropdown').each(function() {
@@ -58,7 +57,7 @@ function initDropdown(root) {
         $items.click(function () {
             const $this = $(this);
             const newValue = $this.val();
-            
+
             setValue(newValue);
             collapse();
         });
