@@ -70,6 +70,7 @@
                     </Rock:Lava>
                     <div class="navbar-nav">
                         <Rock:Zone Name="Login" runat="server" />
+                        <Rock:PageBreadCrumbs ID="PageBreadCrumbs" runat="server" />
 			        </div>
                 </div>
             </nav>
